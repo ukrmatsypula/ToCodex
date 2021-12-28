@@ -1,9 +1,15 @@
 {
   "users": [
-    { "id": 1, "name": "Jack", "age": 22, "gender": "male" },
-    { "id": 2, "name": "Alex", "age": 24, "gender": "male" },
-    { "id": 3, "name": "Roman", "age": 27, "gender": "male" },
-    { "id": 4, "name": "Marina", "age": 30, "gender": "female" }
+    { "id": 1, "name": "Jack", "age": 22, "img": "https://picsum.photos/id/237/100/100", "gender": "male" },
+    { "id": 2, "name": "Alex", "age": 24, "img": "https://picsum.photos/id/236/100/100", "gender": "male" },
+    { "id": 3, "name": "Roman", "age": 27, "img": "https://picsum.photos/id/235/100/100", "gender": "male" },
+    { "id": 4, "name": "Marina", "age": 30, "img": "https://picsum.photos/id/234/100/100", "gender": "female" },
+    { "id": 5, "name": "John", "age": 31, "img": "https://picsum.photos/id/233/100/100", "gender": "male" },
+    { "id": 6, "name": "Alyona", "age": 33, "img": "https://picsum.photos/id/232/100/100", "gender": "female" },
+    { "id": 7, "name": "Jovan", "age": 24, "img": "https://picsum.photos/id/231/100/100", "gender": "male" },
+    { "id": 8, "name": "Alla", "age": 41, "img": "https://picsum.photos/id/230/100/100", "gender": "female" },
+    { "id": 9, "name": "Sveta", "age": 51, "img": "https://picsum.photos/id/229/100/100", "gender": "female" },
+    { "id": 10, "name": "Maiia", "age": 53, "img": "https://picsum.photos/id/228/100/100", "gender": "female" }
   ],
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 },

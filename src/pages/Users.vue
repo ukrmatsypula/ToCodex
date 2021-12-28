@@ -13,7 +13,10 @@
 
           <tbody>
             <tr v-for="user in users" :key="user.id">
-              <td>{{ user.name }}</td>
+              <td>
+                <img :src="user.img" :alt="user.name" />
+                <span>{{ user.name }}</span>
+              </td>
               <td>{{ user.age }}</td>
               <td>{{ user.gender }}</td>
             </tr>
@@ -42,18 +45,20 @@ export default {
     users: [],
   }),
   created() {
-    this.users = [
-      { id: 1, name: "Jack", age: 22, gender: "male" },
-      { id: 2, name: "Alex", age: 24, gender: "male" },
-    ];
+    axios
+      .get("http://localhost:3000/users")
+      .then((response) => (this.users = response.data))
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 </script>
 
 <style lang="scss" scoped>
 img {
-  width: 60px;
-  height: auto;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   margin-right: 16px;
 }
