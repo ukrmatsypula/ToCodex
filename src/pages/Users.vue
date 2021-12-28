@@ -5,14 +5,14 @@
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Gender</th>
+              <th @click="sort('name')">Name</th>
+              <th @click="sort('age')">Age</th>
+              <th @click="sort('gender')">Gender</th>
             </tr>
           </thead>
 
           <tbody>
-            <tr v-for="user in users" :key="user.id">
+            <tr v-for="user in usersSort" :key="user.id">
               <td>
                 <img :src="user.img" :alt="user.name" />
                 <span>{{ user.name }}</span>
@@ -22,6 +22,9 @@
             </tr>
           </tbody>
         </table>
+        <p>
+          debug: sort: {{ this.currentSort }}, dir: {{ this.currentSortDir }}
+        </p>
       </div>
     </section>
 
@@ -43,7 +46,34 @@ import axios from "axios";
 export default {
   data: () => ({
     users: [],
+    currentSort: "name",
+    currentSortDir: "asc",
   }),
+  computed: {
+    usersSort() {
+      return this.users.sort((a, b) => {
+        let mod = 1;
+        if (this.currentSortDir === "desc") {
+          return (mod = -1);
+        }
+        if (a[this.currentSort] < b[this.currentSort]) {
+          return -1 * mod;
+        }
+        if (a[this.currentSort] > b[this.currentSort]) {
+          return 1 * mod;
+        }
+        return 0;
+      });
+    },
+  },
+  methods: {
+    sort(e) {
+      if (e === this.currentSort) {
+        this.currentSortDir = this.currentSortDir === "asc" ? "desc" : "asc";
+      }
+      this.currentSort = e;
+    },
+  },
   created() {
     axios
       .get("http://localhost:3000/users")
