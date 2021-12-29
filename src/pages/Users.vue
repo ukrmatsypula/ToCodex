@@ -5,9 +5,9 @@
         <table>
           <thead>
             <tr>
-              <th @click="sort('name')">Name</th>
-              <th @click="sort('age')">Age</th>
-              <th @click="sort('gender')">Gender</th>
+              <th @click="sort('name')">Name &#8609;</th>
+              <th @click="sort('age')">Age &#8609;</th>
+              <th @click="sort('gender')">Gender &#8609;</th>
             </tr>
           </thead>
 
